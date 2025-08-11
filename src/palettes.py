@@ -1,12 +1,13 @@
 import json
 import random
+import os
 
 def loadPalleteList(paletteSize):
 
     if paletteSize in ["1","2","3","4"]:
         converted = {'1':'100','2':'200','3':'500','4':'1000'}[paletteSize]
-        # print(f"{'/'.join(__file__.split('/')[:-1] )}/ColorPalettes/{str(paletteSize)}.json")
-        with open(f"{'/'.join(__file__.split('/')[:-1] )}/ColorPalettes/{ converted }.json", 'r') as file:
+        # print(f"{os.sep.join(__file__.split(os.sep)[:-1] )}/ColorPalettes/{str(paletteSize)}.json")
+        with open(f"{os.sep.join(__file__.split(os.sep)[:-1] )}/ColorPalettes/{ converted }.json", 'r') as file:
             return json.load(file)
         
     else:
